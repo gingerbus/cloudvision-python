@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>cloudvision.Connector &#8212; CloudVision Python 1.5.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">CloudVision Python 1.5.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for cloudvision.Connector</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2020 Arista Networks, Inc.</span>
+<span class="c1"># Use of this source code is governed by the Apache License 2.0</span>
+<span class="c1"># that can be found in the COPYING file.</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;cloudvision.Connector&quot;</span>
+
+
+<div class="viewcode-block" id="process_notifs"><a class="viewcode-back" href="../../cloudvision.Connector.html#cloudvision.Connector.process_notifs">[docs]</a><span class="k">def</span> <span class="nf">process_notifs</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">paths</span><span class="o">=</span><span class="p">{},</span> <span class="n">keys</span><span class="o">=</span><span class="p">{},</span> <span class="n">nominalKeys</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    process_notifs consume the batch coming from stream and return them</span>
+<span class="sd">    as a hierarchy of dataset, path, and keys. Allowing for faster access</span>
+<span class="sd">    of a given time serie.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">stream</span><span class="p">:</span>
+        <span class="n">dname</span> <span class="o">=</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">notif</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;notifications&quot;</span><span class="p">]:</span>
+            <span class="n">time</span> <span class="o">=</span> <span class="n">notif</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notif</span><span class="p">[</span><span class="s2">&quot;path_elements&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">paths</span> <span class="ow">and</span> <span class="n">path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">notif</span><span class="p">[</span><span class="s2">&quot;updates&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">keys</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">__get_val</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">nominalKeys</span><span class="p">)</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">__update_dict</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">dname</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">nominalKeys</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+<span class="k">def</span> <span class="nf">__get_val</span><span class="p">(</span><span class="n">nominal</span><span class="p">,</span> <span class="n">nomKeys</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">nominal</span>
+    <span class="k">if</span> <span class="n">nomKeys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">res</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">nomKeys</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                Key  %s not found in json %s</span>
+<span class="sd">                Full nominal %s</span>
+<span class="sd">                Nominal key path %s</span>
+<span class="sd">                &quot;&quot;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">nominal</span><span class="p">,</span> <span class="n">nomKeys</span><span class="p">))</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+
+<span class="k">def</span> <span class="nf">__update_dict</span><span class="p">(</span><span class="n">resDict</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">nominalKeys</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">ts</span><span class="p">):</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="n">resDict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span>
+                               <span class="p">{})</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">path</span><span class="p">,</span>
+                                              <span class="p">{})</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="k">if</span> <span class="n">nominalKeys</span><span class="p">:</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nominalKeys</span><span class="p">),</span> <span class="p">{})</span>
+    <span class="n">entry</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="n">entry</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;timestamps&quot;</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">resDict</span>
+
+
+<div class="viewcode-block" id="sort_dict"><a class="viewcode-back" href="../../cloudvision.Connector.html#cloudvision.Connector.sort_dict">[docs]</a><span class="k">def</span> <span class="nf">sort_dict</span><span class="p">(</span><span class="n">resDict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    sort_dict orders every timeseries in a hierarchy of dataset by its timestamps.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">sort_timeserie</span><span class="p">(</span><span class="n">timeserie</span><span class="p">):</span>
+        <span class="n">timeserie</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">],</span> <span class="n">timeserie</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span>
+            <span class="n">timeserie</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">],</span>
+            <span class="n">timeserie</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">]),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nanos</span><span class="p">)))</span>
+
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">resDict</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+        <span class="n">timeserie</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s2">&quot;values&quot;</span> <span class="ow">in</span> <span class="n">timeserie</span> <span class="ow">and</span> <span class="s2">&quot;timestamps&quot;</span> <span class="ow">in</span> <span class="n">timeserie</span><span class="p">:</span>
+            <span class="n">sort_timeserie</span><span class="p">(</span><span class="n">timeserie</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">timeserie</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">resDict</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">CloudVision Python 1.5.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Arista.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+  </body>
+</html>
