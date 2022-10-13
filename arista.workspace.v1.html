@@ -54,9 +54,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="arista.workspace.v1.services.html">arista.workspace.v1.services package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arista.workspace.v1.services.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arista.workspace.v1.services.html#arista-workspace-v1-services-gen-pb2-module">arista.workspace.v1.services.gen_pb2 module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arista.workspace.v1.services.html#arista-workspace-v1-services-gen-pb2-grpc-module">arista.workspace.v1.services.gen_pb2_grpc module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arista.workspace.v1.services.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arista.workspace.v1.services.html#module-arista.workspace.v1.services.gen_pb2">arista.workspace.v1.services.gen_pb2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arista.workspace.v1.services.html#module-arista.workspace.v1.services.gen_pb2_grpc">arista.workspace.v1.services.gen_pb2_grpc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arista.workspace.v1.services.html#module-arista.workspace.v1.services">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -65,14 +65,611 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="arista-workspace-v1-workspace-pb2-module">
-<h2>arista.workspace.v1.workspace_pb2 module<a class="headerlink" href="#arista-workspace-v1-workspace-pb2-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-arista.workspace.v1.workspace_pb2">
+<span id="arista-workspace-v1-workspace-pb2-module"></span><h2>arista.workspace.v1.workspace_pb2 module<a class="headerlink" href="#module-arista.workspace.v1.workspace_pb2" title="Permalink to this headline">¶</a></h2>
+<p>Generated protocol buffer code.</p>
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResult">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">BuildResult</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResult.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResult.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResult.config_validation_result">
+<code class="sig-name descname">config_validation_result</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResult.config_validation_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.BuildResult.config_validation_result</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResult.configlet_build_results">
+<code class="sig-name descname">configlet_build_results</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResult.configlet_build_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.BuildResult.configlet_build_results</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResult.input_validation_results">
+<code class="sig-name descname">input_validation_results</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResult.input_validation_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.BuildResult.input_validation_results</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResult.stage">
+<code class="sig-name descname">stage</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResult.stage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.BuildResult.stage</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResult.state">
+<code class="sig-name descname">state</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResult.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.BuildResult.state</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResults">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">BuildResults</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResults.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResults.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResults.ValuesEntry">
+<em class="property">class </em><code class="sig-name descname">ValuesEntry</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResults.ValuesEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResults.ValuesEntry.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResults.ValuesEntry.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResults.ValuesEntry.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResults.ValuesEntry.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.BuildResults.ValuesEntry.key</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResults.ValuesEntry.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResults.ValuesEntry.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.BuildResults.ValuesEntry.value</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.BuildResults.values">
+<code class="sig-name descname">values</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.BuildResults.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.BuildResults.values</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigValidationResult">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">ConfigValidationResult</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigValidationResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigValidationResult.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigValidationResult.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigValidationResult.errors">
+<code class="sig-name descname">errors</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigValidationResult.errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.ConfigValidationResult.errors</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigValidationResult.summary">
+<code class="sig-name descname">summary</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigValidationResult.summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.ConfigValidationResult.summary</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigValidationResult.warnings">
+<code class="sig-name descname">warnings</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigValidationResult.warnings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.ConfigValidationResult.warnings</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResult">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">ConfigletBuildResult</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResult.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResult.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResult.generated_config">
+<code class="sig-name descname">generated_config</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResult.generated_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.ConfigletBuildResult.generated_config</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResult.template_errors">
+<code class="sig-name descname">template_errors</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResult.template_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.ConfigletBuildResult.template_errors</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResults">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">ConfigletBuildResults</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResults.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResults.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResults.ValuesEntry">
+<em class="property">class </em><code class="sig-name descname">ValuesEntry</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResults.ValuesEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResults.ValuesEntry.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResults.ValuesEntry.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResults.ValuesEntry.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResults.ValuesEntry.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.ConfigletBuildResults.ValuesEntry.key</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResults.ValuesEntry.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResults.ValuesEntry.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.ConfigletBuildResults.ValuesEntry.value</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.ConfigletBuildResults.values">
+<code class="sig-name descname">values</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.ConfigletBuildResults.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.ConfigletBuildResults.values</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.InputError">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">InputError</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputError.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputError.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputError.field_id">
+<code class="sig-name descname">field_id</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputError.field_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputError.field_id</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputError.members">
+<code class="sig-name descname">members</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputError.members" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputError.members</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputError.message">
+<code class="sig-name descname">message</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputError.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputError.message</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputError.path">
+<code class="sig-name descname">path</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputError.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputError.path</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.InputErrors">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">InputErrors</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputErrors.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputErrors.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputErrors.values">
+<code class="sig-name descname">values</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputErrors.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputErrors.values</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResult">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">InputValidationResult</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResult.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResult.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResult.input_schema_errors">
+<code class="sig-name descname">input_schema_errors</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResult.input_schema_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputValidationResult.input_schema_errors</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResult.input_value_errors">
+<code class="sig-name descname">input_value_errors</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResult.input_value_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputValidationResult.input_value_errors</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResult.other_errors">
+<code class="sig-name descname">other_errors</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResult.other_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputValidationResult.other_errors</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResults">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">InputValidationResults</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResults.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResults.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResults.ValuesEntry">
+<em class="property">class </em><code class="sig-name descname">ValuesEntry</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResults.ValuesEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResults.ValuesEntry.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResults.ValuesEntry.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResults.ValuesEntry.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResults.ValuesEntry.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputValidationResults.ValuesEntry.key</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResults.ValuesEntry.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResults.ValuesEntry.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputValidationResults.ValuesEntry.value</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.InputValidationResults.values">
+<code class="sig-name descname">values</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.InputValidationResults.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.InputValidationResults.values</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.RequestParams">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">RequestParams</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.RequestParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.RequestParams.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.RequestParams.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.RequestParams.request_id">
+<code class="sig-name descname">request_id</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.RequestParams.request_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.RequestParams.request_id</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.Response">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">Response</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Response.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Response.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Response.message">
+<code class="sig-name descname">message</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Response.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Response.message</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Response.status">
+<code class="sig-name descname">status</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Response.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Response.status</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.Responses">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">Responses</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Responses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Responses.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Responses.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.Responses.ValuesEntry">
+<em class="property">class </em><code class="sig-name descname">ValuesEntry</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Responses.ValuesEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Responses.ValuesEntry.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Responses.ValuesEntry.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Responses.ValuesEntry.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Responses.ValuesEntry.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Responses.ValuesEntry.key</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Responses.ValuesEntry.value">
+<code class="sig-name descname">value</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Responses.ValuesEntry.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Responses.ValuesEntry.value</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Responses.values">
+<code class="sig-name descname">values</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Responses.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Responses.values</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.TemplateError">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">TemplateError</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.TemplateError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.TemplateError.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.TemplateError.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.TemplateError.detail">
+<code class="sig-name descname">detail</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.TemplateError.detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.TemplateError.detail</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.TemplateError.exception">
+<code class="sig-name descname">exception</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.TemplateError.exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.TemplateError.exception</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.TemplateError.line_num">
+<code class="sig-name descname">line_num</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.TemplateError.line_num" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.TemplateError.line_num</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.TemplateErrors">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">TemplateErrors</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.TemplateErrors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.TemplateErrors.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.TemplateErrors.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.TemplateErrors.values">
+<code class="sig-name descname">values</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.TemplateErrors.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.TemplateErrors.values</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">Workspace</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.cc_ids">
+<code class="sig-name descname">cc_ids</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.cc_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Workspace.cc_ids</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.created_at">
+<code class="sig-name descname">created_at</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.created_at" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Workspace.created_at</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.created_by">
+<code class="sig-name descname">created_by</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.created_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Workspace.created_by</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Workspace.key</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.last_build_id">
+<code class="sig-name descname">last_build_id</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.last_build_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Workspace.last_build_id</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.last_modified_at">
+<code class="sig-name descname">last_modified_at</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.last_modified_at" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Workspace.last_modified_at</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.last_modified_by">
+<code class="sig-name descname">last_modified_by</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.last_modified_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Workspace.last_modified_by</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.responses">
+<code class="sig-name descname">responses</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.responses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Workspace.responses</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.Workspace.state">
+<code class="sig-name descname">state</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.Workspace.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.Workspace.state</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceBuild">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">WorkspaceBuild</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceBuild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceBuild.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceBuild.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceBuild.build_results">
+<code class="sig-name descname">build_results</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceBuild.build_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceBuild.build_results</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceBuild.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceBuild.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceBuild.key</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceBuild.state">
+<code class="sig-name descname">state</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceBuild.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceBuild.state</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceBuildKey">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">WorkspaceBuildKey</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceBuildKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceBuildKey.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceBuildKey.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceBuildKey.build_id">
+<code class="sig-name descname">build_id</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceBuildKey.build_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceBuildKey.build_id</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceBuildKey.workspace_id">
+<code class="sig-name descname">workspace_id</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceBuildKey.workspace_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceBuildKey.workspace_id</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceConfig">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">WorkspaceConfig</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceConfig.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceConfig.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceConfig.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceConfig.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceConfig.description</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceConfig.display_name">
+<code class="sig-name descname">display_name</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceConfig.display_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceConfig.display_name</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceConfig.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceConfig.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceConfig.key</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceConfig.request">
+<code class="sig-name descname">request</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceConfig.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceConfig.request</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceConfig.request_params">
+<code class="sig-name descname">request_params</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceConfig.request_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceConfig.request_params</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceKey">
+<em class="property">class </em><code class="sig-prename descclassname">arista.workspace.v1.workspace_pb2.</code><code class="sig-name descname">WorkspaceKey</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.pyext._message.CMessage</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">google.protobuf.message.Message</span></code></p>
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceKey.DESCRIPTOR">
+<code class="sig-name descname">DESCRIPTOR</code><em class="property"> = &lt;google.protobuf.pyext._message.MessageDescriptor object&gt;</em><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceKey.DESCRIPTOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arista.workspace.v1.workspace_pb2.WorkspaceKey.workspace_id">
+<code class="sig-name descname">workspace_id</code><a class="headerlink" href="#arista.workspace.v1.workspace_pb2.WorkspaceKey.workspace_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field arista.workspace.v1.WorkspaceKey.workspace_id</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="arista-workspace-v1-workspace-pb2-grpc-module">
-<h2>arista.workspace.v1.workspace_pb2_grpc module<a class="headerlink" href="#arista-workspace-v1-workspace-pb2-grpc-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-arista.workspace.v1.workspace_pb2_grpc">
+<span id="arista-workspace-v1-workspace-pb2-grpc-module"></span><h2>arista.workspace.v1.workspace_pb2_grpc module<a class="headerlink" href="#module-arista.workspace.v1.workspace_pb2_grpc" title="Permalink to this headline">¶</a></h2>
+<p>Client and server classes corresponding to protobuf-defined services.</p>
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-arista.workspace.v1">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-arista.workspace.v1" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -87,9 +684,9 @@
 <li><a class="reference internal" href="#">arista.workspace.v1 package</a><ul>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#arista-workspace-v1-workspace-pb2-module">arista.workspace.v1.workspace_pb2 module</a></li>
-<li><a class="reference internal" href="#arista-workspace-v1-workspace-pb2-grpc-module">arista.workspace.v1.workspace_pb2_grpc module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#module-arista.workspace.v1.workspace_pb2">arista.workspace.v1.workspace_pb2 module</a></li>
+<li><a class="reference internal" href="#module-arista.workspace.v1.workspace_pb2_grpc">arista.workspace.v1.workspace_pb2_grpc module</a></li>
+<li><a class="reference internal" href="#module-arista.workspace.v1">Module contents</a></li>
 </ul>
 </li>
 </ul>

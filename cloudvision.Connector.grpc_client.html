@@ -51,11 +51,214 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="cloudvision-connector-grpc-client-grpcclient-module">
-<h2>cloudvision.Connector.grpc_client.grpcClient module<a class="headerlink" href="#cloudvision-connector-grpc-client-grpcclient-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudvision.Connector.grpc_client.grpcClient">
+<span id="cloudvision-connector-grpc-client-grpcclient-module"></span><h2>cloudvision.Connector.grpc_client.grpcClient module<a class="headerlink" href="#module-cloudvision.Connector.grpc_client.grpcClient" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.grpc_client.grpcClient.</code><code class="sig-name descname">GRPCClient</code><span class="sig-paren">(</span><em class="sig-param">grpcAddr: str</em>, <em class="sig-param">*</em>, <em class="sig-param">certs: Optional[str] = None</em>, <em class="sig-param">key: Optional[str] = None</em>, <em class="sig-param">ca: Optional[str] = None</em>, <em class="sig-param">token: Optional[str] = None</em>, <em class="sig-param">tokenValue: Optional[str] = None</em>, <em class="sig-param">certsValue: Optional[str] = None</em>, <em class="sig-param">keyValue: Optional[str] = None</em>, <em class="sig-param">caValue: Optional[str] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>GRPCClient implements the protobuf client as well as its methods.
+grpcAddr must be a valid apiserver address in the format &lt;ADDRESS&gt;:&lt;PORT&gt;.
+certs, if present, must be the path to the cert file.
+key, if present, must be the path to a .pem key file.
+ca, if present, must be the path to a root certificate authority file.
+token, if present, must be the path a .tok user access token.
+tokenValue, if present, is the actual token in string form. Cannot be set with token
+certsValue, if present, is the actual certs in string form. Cannot be set with certs
+keyValue, if present, is the actual key in string form. Cannot be set with key
+caValue, if present, is the actual ca in string form. Cannot be set with ca</p>
+<dl class="attribute">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.AUTH_KEY_PATH">
+<code class="sig-name descname">AUTH_KEY_PATH</code><em class="property"> = 'access_token'</em><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.AUTH_KEY_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.create_dataset">
+<code class="sig-name descname">create_dataset</code><span class="sig-paren">(</span><em class="sig-param">dtype</em>, <em class="sig-param">dId</em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.create_dataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.create_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.decode_batch">
+<code class="sig-name descname">decode_batch</code><span class="sig-paren">(</span><em class="sig-param">batch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.decode_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.decode_batch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.decode_notification">
+<code class="sig-name descname">decode_notification</code><span class="sig-paren">(</span><em class="sig-param">notif</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.decode_notification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.decode_notification" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">queries: List[router_pb2.Query], start: Union[google.protobuf.timestamp_pb2.Timestamp, datetime.datetime, None] = None, end: Union[google.protobuf.timestamp_pb2.Timestamp, datetime.datetime, None] = None, versions=0, sharding=None, exact_range=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get creates and executes a Get protobuf message, returning a stream of
+notificationBatch.
+queries must be a list of querry protobuf messages.
+start and end, if present, must be nanoseconds timestamps (uint64).
+sharding, if present must be a protobuf sharding message.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.get_datasets">
+<code class="sig-name descname">get_datasets</code><span class="sig-paren">(</span><em class="sig-param">types: Optional[List[str]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.get_datasets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.get_datasets" title="Permalink to this definition">¶</a></dt>
+<dd><p>GetDatasets retrieves all the datasets streaming on CloudVision.
+types, if present, filter the queried dataset by types</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.publish">
+<code class="sig-name descname">publish</code><span class="sig-paren">(</span><em class="sig-param">dId, notifs: List[notification_pb2.Notification], dtype: str = 'device', sync: bool = True, compare: Optional[Tuple[Any, Any]] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.publish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish creates and executes a Publish protobuf message.
+refer to cloudvision/Connector/protobufs/router.proto:124
+default to sync publish being true so that changes are reflected</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">search_type=4</em>, <em class="sig-param">d_type: str = 'device'</em>, <em class="sig-param">d_name: str = ''</em>, <em class="sig-param">result_size: int = 1</em>, <em class="sig-param">start: Union[google.protobuf.timestamp_pb2.Timestamp</em>, <em class="sig-param">datetime.datetime</em>, <em class="sig-param">None] = None</em>, <em class="sig-param">end: Union[google.protobuf.timestamp_pb2.Timestamp</em>, <em class="sig-param">datetime.datetime</em>, <em class="sig-param">None] = None</em>, <em class="sig-param">path_elements=[]</em>, <em class="sig-param">key_filters: Iterable[router_pb2.Filter] = []</em>, <em class="sig-param">value_filters: Iterable[router_pb2.Filter] = []</em>, <em class="sig-param">exact_range: bool = False</em>, <em class="sig-param">offset: int = 0</em>, <em class="sig-param">exact_term: bool = False</em>, <em class="sig-param">sort: Iterable[router_pb2.Sort] = []</em>, <em class="sig-param">count_only: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.GRPCClient.subscribe">
+<code class="sig-name descname">subscribe</code><span class="sig-paren">(</span><em class="sig-param">queries</em>, <em class="sig-param">sharding=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.subscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.GRPCClient.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe creates and executes a Subscribe protobuf message,
+returning a stream of notificationBatch.
+queries must be a list of querry protobuf messages.
+sharding, if present must be a protobuf sharding message.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.create_notification">
+<code class="sig-prename descclassname">cloudvision.Connector.grpc_client.grpcClient.</code><code class="sig-name descname">create_notification</code><span class="sig-paren">(</span><em class="sig-param">ts: Union[google.protobuf.timestamp_pb2.Timestamp, datetime.datetime], paths: List[Any], deletes: Optional[List[Any]] = None, updates: Optional[List[Tuple[Any, Any]]] = None, retracts: Optional[List[Any]] = None</em><span class="sig-paren">)</span> &#x2192; notification_pb2.Notification<a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#create_notification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.create_notification" title="Permalink to this definition">¶</a></dt>
+<dd><p>create_notification creates a notification protobuf message.
+ts must be a google.protobuf.timestamp_pb2.Timestamp or a
+python datetime object.
+paths must be a list of path elements.
+deletes and retracts, if present, must be lists of keys.
+updates, if present, must be of the form [(key, value)…].</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.create_query">
+<code class="sig-prename descclassname">cloudvision.Connector.grpc_client.grpcClient.</code><code class="sig-name descname">create_query</code><span class="sig-paren">(</span><em class="sig-param">pathKeys: List[Any], dId: str, dtype: str = 'device'</em><span class="sig-paren">)</span> &#x2192; router_pb2.Query<a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#create_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.create_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>create_query creates a protobuf query message with dataset ID dId
+and dataset type dtype.
+pathKeys must be of the form [([pathElts…], [keys…])…]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudvision.Connector.grpc_client.grpcClient.to_pbts">
+<code class="sig-prename descclassname">cloudvision.Connector.grpc_client.grpcClient.</code><code class="sig-name descname">to_pbts</code><span class="sig-paren">(</span><em class="sig-param">ts: Union[google.protobuf.timestamp_pb2.Timestamp, datetime.datetime]</em><span class="sig-paren">)</span> &#x2192; google.protobuf.timestamp_pb2.Timestamp<a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#to_pbts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.grpcClient.to_pbts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudvision.Connector.grpc_client">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cloudvision.Connector.grpc_client" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cloudvision.Connector.grpc_client.create_query">
+<code class="sig-prename descclassname">cloudvision.Connector.grpc_client.</code><code class="sig-name descname">create_query</code><span class="sig-paren">(</span><em class="sig-param">pathKeys: List[Any], dId: str, dtype: str = 'device'</em><span class="sig-paren">)</span> &#x2192; router_pb2.Query<a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#create_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.create_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>create_query creates a protobuf query message with dataset ID dId
+and dataset type dtype.
+pathKeys must be of the form [([pathElts…], [keys…])…]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cloudvision.Connector.grpc_client.create_notification">
+<code class="sig-prename descclassname">cloudvision.Connector.grpc_client.</code><code class="sig-name descname">create_notification</code><span class="sig-paren">(</span><em class="sig-param">ts: Union[google.protobuf.timestamp_pb2.Timestamp, datetime.datetime], paths: List[Any], deletes: Optional[List[Any]] = None, updates: Optional[List[Tuple[Any, Any]]] = None, retracts: Optional[List[Any]] = None</em><span class="sig-paren">)</span> &#x2192; notification_pb2.Notification<a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#create_notification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.create_notification" title="Permalink to this definition">¶</a></dt>
+<dd><p>create_notification creates a notification protobuf message.
+ts must be a google.protobuf.timestamp_pb2.Timestamp or a
+python datetime object.
+paths must be a list of path elements.
+deletes and retracts, if present, must be lists of keys.
+updates, if present, must be of the form [(key, value)…].</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.grpc_client.</code><code class="sig-name descname">GRPCClient</code><span class="sig-paren">(</span><em class="sig-param">grpcAddr: str</em>, <em class="sig-param">*</em>, <em class="sig-param">certs: Optional[str] = None</em>, <em class="sig-param">key: Optional[str] = None</em>, <em class="sig-param">ca: Optional[str] = None</em>, <em class="sig-param">token: Optional[str] = None</em>, <em class="sig-param">tokenValue: Optional[str] = None</em>, <em class="sig-param">certsValue: Optional[str] = None</em>, <em class="sig-param">keyValue: Optional[str] = None</em>, <em class="sig-param">caValue: Optional[str] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>GRPCClient implements the protobuf client as well as its methods.
+grpcAddr must be a valid apiserver address in the format &lt;ADDRESS&gt;:&lt;PORT&gt;.
+certs, if present, must be the path to the cert file.
+key, if present, must be the path to a .pem key file.
+ca, if present, must be the path to a root certificate authority file.
+token, if present, must be the path a .tok user access token.
+tokenValue, if present, is the actual token in string form. Cannot be set with token
+certsValue, if present, is the actual certs in string form. Cannot be set with certs
+keyValue, if present, is the actual key in string form. Cannot be set with key
+caValue, if present, is the actual ca in string form. Cannot be set with ca</p>
+<dl class="attribute">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.AUTH_KEY_PATH">
+<code class="sig-name descname">AUTH_KEY_PATH</code><em class="property"> = 'access_token'</em><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.AUTH_KEY_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.create_dataset">
+<code class="sig-name descname">create_dataset</code><span class="sig-paren">(</span><em class="sig-param">dtype</em>, <em class="sig-param">dId</em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.create_dataset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.create_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.decode_batch">
+<code class="sig-name descname">decode_batch</code><span class="sig-paren">(</span><em class="sig-param">batch</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.decode_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.decode_batch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.decode_notification">
+<code class="sig-name descname">decode_notification</code><span class="sig-paren">(</span><em class="sig-param">notif</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.decode_notification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.decode_notification" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">queries: List[router_pb2.Query], start: Union[google.protobuf.timestamp_pb2.Timestamp, datetime.datetime, None] = None, end: Union[google.protobuf.timestamp_pb2.Timestamp, datetime.datetime, None] = None, versions=0, sharding=None, exact_range=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get creates and executes a Get protobuf message, returning a stream of
+notificationBatch.
+queries must be a list of querry protobuf messages.
+start and end, if present, must be nanoseconds timestamps (uint64).
+sharding, if present must be a protobuf sharding message.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.get_datasets">
+<code class="sig-name descname">get_datasets</code><span class="sig-paren">(</span><em class="sig-param">types: Optional[List[str]] = None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.get_datasets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.get_datasets" title="Permalink to this definition">¶</a></dt>
+<dd><p>GetDatasets retrieves all the datasets streaming on CloudVision.
+types, if present, filter the queried dataset by types</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.publish">
+<code class="sig-name descname">publish</code><span class="sig-paren">(</span><em class="sig-param">dId, notifs: List[notification_pb2.Notification], dtype: str = 'device', sync: bool = True, compare: Optional[Tuple[Any, Any]] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.publish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.publish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publish creates and executes a Publish protobuf message.
+refer to cloudvision/Connector/protobufs/router.proto:124
+default to sync publish being true so that changes are reflected</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">search_type=4</em>, <em class="sig-param">d_type: str = 'device'</em>, <em class="sig-param">d_name: str = ''</em>, <em class="sig-param">result_size: int = 1</em>, <em class="sig-param">start: Union[google.protobuf.timestamp_pb2.Timestamp</em>, <em class="sig-param">datetime.datetime</em>, <em class="sig-param">None] = None</em>, <em class="sig-param">end: Union[google.protobuf.timestamp_pb2.Timestamp</em>, <em class="sig-param">datetime.datetime</em>, <em class="sig-param">None] = None</em>, <em class="sig-param">path_elements=[]</em>, <em class="sig-param">key_filters: Iterable[router_pb2.Filter] = []</em>, <em class="sig-param">value_filters: Iterable[router_pb2.Filter] = []</em>, <em class="sig-param">exact_range: bool = False</em>, <em class="sig-param">offset: int = 0</em>, <em class="sig-param">exact_term: bool = False</em>, <em class="sig-param">sort: Iterable[router_pb2.Sort] = []</em>, <em class="sig-param">count_only: bool = False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.search" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.grpc_client.GRPCClient.subscribe">
+<code class="sig-name descname">subscribe</code><span class="sig-paren">(</span><em class="sig-param">queries</em>, <em class="sig-param">sharding=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/grpc_client/grpcClient.html#GRPCClient.subscribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.grpc_client.GRPCClient.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subscribe creates and executes a Subscribe protobuf message,
+returning a stream of notificationBatch.
+queries must be a list of querry protobuf messages.
+sharding, if present must be a protobuf sharding message.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 </div>
 
@@ -69,8 +272,8 @@
   <ul>
 <li><a class="reference internal" href="#">cloudvision.Connector.grpc_client package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#cloudvision-connector-grpc-client-grpcclient-module">cloudvision.Connector.grpc_client.grpcClient module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#module-cloudvision.Connector.grpc_client.grpcClient">cloudvision.Connector.grpc_client.grpcClient module</a></li>
+<li><a class="reference internal" href="#module-cloudvision.Connector.grpc_client">Module contents</a></li>
 </ul>
 </li>
 </ul>

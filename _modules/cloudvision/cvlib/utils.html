@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>cloudvision.cvlib.utils &#8212; CloudVision Python 1.5.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">CloudVision Python 1.5.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for cloudvision.cvlib.utils</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Copyright (c) 2022 Arista Networks, Inc.</span>
+<span class="c1"># Use of this source code is governed by the Apache License 2.0</span>
+<span class="c1"># that can be found in the COPYING file.</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span>
+
+<span class="kn">from</span> <span class="nn">cloudvision.Connector.grpc_client</span> <span class="kn">import</span> <span class="n">GRPCClient</span><span class="p">,</span> <span class="n">create_query</span>
+
+<span class="kn">from</span> <span class="nn">.exceptions</span> <span class="kn">import</span> <span class="n">ScriptException</span>
+
+
+<div class="viewcode-block" id="queryCCStartTime"><a class="viewcode-back" href="../../../cloudvision.cvlib.html#cloudvision.cvlib.utils.queryCCStartTime">[docs]</a><span class="k">def</span> <span class="nf">queryCCStartTime</span><span class="p">(</span><span class="n">client</span><span class="p">:</span> <span class="n">GRPCClient</span><span class="p">,</span> <span class="n">ccId</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="c1"># Create a query to the cvp dataset in the database for the root entry of the change control</span>
+    <span class="c1"># with the provided ID. The root contains all general information regarding the CC</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">create_query</span><span class="p">([([</span><span class="s2">&quot;changecontrol&quot;</span><span class="p">,</span> <span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="n">ccId</span><span class="p">,</span> <span class="s2">&quot;root&quot;</span><span class="p">],</span> <span class="p">[])],</span> <span class="s2">&quot;cvp&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">changeControls</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">batch</span> <span class="ow">in</span> <span class="n">changeControls</span><span class="p">:</span>
+        <span class="c1"># There will only be a single notification here as we&#39;re only querying a single path</span>
+        <span class="k">for</span> <span class="n">notif</span> <span class="ow">in</span> <span class="n">batch</span><span class="p">[</span><span class="s2">&quot;notifications&quot;</span><span class="p">]:</span>
+            <span class="c1"># The updates received will be in the form of nested dictionaries</span>
+            <span class="n">updates</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">notif</span><span class="p">[</span><span class="s2">&quot;updates&quot;</span><span class="p">]</span>
+
+            <span class="c1"># There should be a root key entry at this path, if not the CC is invalid</span>
+            <span class="n">cc</span> <span class="o">=</span> <span class="n">updates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ScriptException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Change control ID </span><span class="si">{ccId}</span><span class="s2"> is invalid: missing &#39;root&#39; key&quot;</span><span class="p">)</span>
+
+            <span class="c1"># The &#39;Start&#39; key of the root entry of a change control holds information on</span>
+            <span class="c1"># when the entire change control started, before any actions ran.</span>
+            <span class="c1"># This should be here by default</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Start&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">start</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ScriptException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Change control ID </span><span class="si">{ccId}</span><span class="s2"> is invalid: missing &#39;Start&#39; key&quot;</span><span class="p">)</span>
+
+            <span class="c1"># The &#39;Start&#39; Dict should always have a &#39;Timestamp&#39; key</span>
+            <span class="n">startTs</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">startTs</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ScriptException</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Change control ID </span><span class="si">{ccId}</span><span class="s2"> is invalid: &#39;Start&#39; missing &#39;Timestamp&#39; key&quot;</span><span class="p">)</span>
+
+            <span class="c1"># If the Timestamp in that entry is 0, it means that the CC has not started</span>
+            <span class="k">if</span> <span class="n">startTs</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ScriptException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Change control ID </span><span class="si">{ccId}</span><span class="s2"> has not yet started&quot;</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;Start&quot;</span><span class="p">][</span><span class="s2">&quot;Timestamp&quot;</span><span class="p">]</span>
+
+    <span class="k">raise</span> <span class="n">ScriptException</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No entries found for Change control ID </span><span class="si">{ccId}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">CloudVision Python 1.5.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Arista.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.
+    </div>
+  </body>
+</html>

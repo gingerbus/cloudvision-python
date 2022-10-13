@@ -51,17 +51,190 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="cloudvision-connector-codec-custom-types-module">
-<h2>cloudvision.Connector.codec.custom_types module<a class="headerlink" href="#cloudvision-connector-codec-custom-types-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudvision.Connector.codec.custom_types">
+<span id="cloudvision-connector-codec-custom-types-module"></span><h2>cloudvision.Connector.codec.custom_types module<a class="headerlink" href="#module-cloudvision.Connector.codec.custom_types" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudvision.Connector.codec.custom_types.Float32">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.custom_types.</code><code class="sig-name descname">Float32</code><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#Float32"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.custom_types.Float32" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudvision.Connector.codec.custom_types.FrozenDict">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.custom_types.</code><code class="sig-name descname">FrozenDict</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#FrozenDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.custom_types.FrozenDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Mapping</span></code></p>
+<p>An immutable wrapper around dictionaries.</p>
+<p>FrozenDict implements the complete <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.Mapping</span></code>
+interface. It can be used as a drop-in replacement for dictionaries where
+immutability is desired, for instance with complex map keys.</p>
+<dl class="method">
+<dt id="cloudvision.Connector.codec.custom_types.FrozenDict.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param">**add_or_replace</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#FrozenDict.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.custom_types.FrozenDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudvision.Connector.codec.custom_types.FrozenDict.dict_cls">
+<code class="sig-name descname">dict_cls</code><a class="headerlink" href="#cloudvision.Connector.codec.custom_types.FrozenDict.dict_cls" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.dict</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudvision.Connector.codec.custom_types.Path">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.custom_types.</code><code class="sig-name descname">Path</code><span class="sig-paren">(</span><em class="sig-param">keys=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#Path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.custom_types.Path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudvision.Connector.codec.custom_types.Wildcard">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.custom_types.</code><code class="sig-name descname">Wildcard</code><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#Wildcard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.custom_types.Wildcard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
 </div>
-<div class="section" id="cloudvision-connector-codec-decoder-module">
-<h2>cloudvision.Connector.codec.decoder module<a class="headerlink" href="#cloudvision-connector-codec-decoder-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudvision.Connector.codec.decoder">
+<span id="cloudvision-connector-codec-decoder-module"></span><h2>cloudvision.Connector.codec.decoder module<a class="headerlink" href="#module-cloudvision.Connector.codec.decoder" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudvision.Connector.codec.decoder.Decoder">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.decoder.</code><code class="sig-name descname">Decoder</code><a class="reference internal" href="_modules/cloudvision/Connector/codec/decoder.html#Decoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.decoder.Decoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="cloudvision.Connector.codec.decoder.Decoder.decode">
+<code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/decoder.html#Decoder.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.decoder.Decoder.decode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.decoder.Decoder.decode_array">
+<code class="sig-name descname">decode_array</code><span class="sig-paren">(</span><em class="sig-param">arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/decoder.html#Decoder.decode_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.decoder.Decoder.decode_array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.decoder.Decoder.decode_map">
+<code class="sig-name descname">decode_map</code><span class="sig-paren">(</span><em class="sig-param">m</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/decoder.html#Decoder.decode_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.decoder.Decoder.decode_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="cloudvision-connector-codec-encoder-module">
-<h2>cloudvision.Connector.codec.encoder module<a class="headerlink" href="#cloudvision-connector-codec-encoder-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudvision.Connector.codec.encoder">
+<span id="cloudvision-connector-codec-encoder-module"></span><h2>cloudvision.Connector.codec.encoder module<a class="headerlink" href="#module-cloudvision.Connector.codec.encoder" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloudvision.Connector.codec.encoder.Encoder">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.encoder.</code><code class="sig-name descname">Encoder</code><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.encoder.Encoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="cloudvision.Connector.codec.encoder.Encoder.encode">
+<code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.encoder.Encoder.encode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.encoder.Encoder.encode_array">
+<code class="sig-name descname">encode_array</code><span class="sig-paren">(</span><em class="sig-param">a</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder.encode_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.encoder.Encoder.encode_array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.encoder.Encoder.encode_map">
+<code class="sig-name descname">encode_map</code><span class="sig-paren">(</span><em class="sig-param">m</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder.encode_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.encoder.Encoder.encode_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.encoder.Encoder.encode_string">
+<code class="sig-name descname">encode_string</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder.encode_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.encoder.Encoder.encode_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cloudvision.Connector.codec">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cloudvision.Connector.codec" title="Permalink to this headline">¶</a></h2>
+<p>export all codec types used by other parts of the library.</p>
+<dl class="class">
+<dt id="cloudvision.Connector.codec.Encoder">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.</code><code class="sig-name descname">Encoder</code><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Encoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="cloudvision.Connector.codec.Encoder.encode">
+<code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param">val</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Encoder.encode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.Encoder.encode_array">
+<code class="sig-name descname">encode_array</code><span class="sig-paren">(</span><em class="sig-param">a</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder.encode_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Encoder.encode_array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.Encoder.encode_map">
+<code class="sig-name descname">encode_map</code><span class="sig-paren">(</span><em class="sig-param">m</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder.encode_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Encoder.encode_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.Encoder.encode_string">
+<code class="sig-name descname">encode_string</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/encoder.html#Encoder.encode_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Encoder.encode_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudvision.Connector.codec.Decoder">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.</code><code class="sig-name descname">Decoder</code><a class="reference internal" href="_modules/cloudvision/Connector/codec/decoder.html#Decoder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Decoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="cloudvision.Connector.codec.Decoder.decode">
+<code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/decoder.html#Decoder.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Decoder.decode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.Decoder.decode_array">
+<code class="sig-name descname">decode_array</code><span class="sig-paren">(</span><em class="sig-param">arr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/decoder.html#Decoder.decode_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Decoder.decode_array" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cloudvision.Connector.codec.Decoder.decode_map">
+<code class="sig-name descname">decode_map</code><span class="sig-paren">(</span><em class="sig-param">m</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/decoder.html#Decoder.decode_map"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Decoder.decode_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudvision.Connector.codec.Float32">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.</code><code class="sig-name descname">Float32</code><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#Float32"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Float32" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudvision.Connector.codec.FrozenDict">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.</code><code class="sig-name descname">FrozenDict</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#FrozenDict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.FrozenDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Mapping</span></code></p>
+<p>An immutable wrapper around dictionaries.</p>
+<p>FrozenDict implements the complete <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.Mapping</span></code>
+interface. It can be used as a drop-in replacement for dictionaries where
+immutability is desired, for instance with complex map keys.</p>
+<dl class="method">
+<dt id="cloudvision.Connector.codec.FrozenDict.copy">
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param">**add_or_replace</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#FrozenDict.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.FrozenDict.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cloudvision.Connector.codec.FrozenDict.dict_cls">
+<code class="sig-name descname">dict_cls</code><a class="headerlink" href="#cloudvision.Connector.codec.FrozenDict.dict_cls" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">builtins.dict</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudvision.Connector.codec.Path">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.</code><code class="sig-name descname">Path</code><span class="sig-paren">(</span><em class="sig-param">keys=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#Path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cloudvision.Connector.codec.Wildcard">
+<em class="property">class </em><code class="sig-prename descclassname">cloudvision.Connector.codec.</code><code class="sig-name descname">Wildcard</code><a class="reference internal" href="_modules/cloudvision/Connector/codec/custom_types.html#Wildcard"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cloudvision.Connector.codec.Wildcard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
 </div>
 </div>
 
@@ -75,10 +248,10 @@
   <ul>
 <li><a class="reference internal" href="#">cloudvision.Connector.codec package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#cloudvision-connector-codec-custom-types-module">cloudvision.Connector.codec.custom_types module</a></li>
-<li><a class="reference internal" href="#cloudvision-connector-codec-decoder-module">cloudvision.Connector.codec.decoder module</a></li>
-<li><a class="reference internal" href="#cloudvision-connector-codec-encoder-module">cloudvision.Connector.codec.encoder module</a></li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#module-cloudvision.Connector.codec.custom_types">cloudvision.Connector.codec.custom_types module</a></li>
+<li><a class="reference internal" href="#module-cloudvision.Connector.codec.decoder">cloudvision.Connector.codec.decoder module</a></li>
+<li><a class="reference internal" href="#module-cloudvision.Connector.codec.encoder">cloudvision.Connector.codec.encoder module</a></li>
+<li><a class="reference internal" href="#module-cloudvision.Connector.codec">Module contents</a></li>
 </ul>
 </li>
 </ul>
